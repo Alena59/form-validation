@@ -54,8 +54,7 @@ function validation(form) {
         createError(input, 'Поле не заполнено!')
         result = false
       }
-    }
-    
+    }  
   }
 
   return result
@@ -65,7 +64,18 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
   
   if (validation(this) == true) {
-    alert('Форма проверена успешно!')
-    form.reset()
+    fetch('https://echo.htmlacademy.ru/', {
+      method: 'POST',
+      body: new FormData(event.target)  
+  })
+
+    .then((response) => {
+      if (response.ok) {
+        alert("Форма успешно отправлена!")
+        form.reset();
+      } else {
+        alert("Ошибка HTTP: " + response.status);
+      }
+    })
   };
-})
+});

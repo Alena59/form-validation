@@ -12,15 +12,15 @@
   <div class="container">
     <h1>Валидация</h1>
 
-    <form action="" class="form" id="add-form">
+    <form action="https://echo.htmlacademy.ru/" method="get" class="form" id="add-form">
       <div class="input-box">
-        <input data-required="true" type="text" class="input-field" placeholder="Имя">
+        <input data-required="true" name="username" type="text" class="input-field" placeholder="Имя">
       </div>
       <div class="input-box">
-        <input data-max-length="6" data-required="true" type="text" class="input-field" placeholder="Фамилия">
+        <input data-max-length="6" name="phone" data-required="true" type="text" class="input-field" placeholder="Фамилия">
       </div>
       <div class="input-box">
-        <input data-min-length="2" data-required="true" type="text" class="input-field" placeholder="Отчество">
+        <input data-min-length="2" name="patronymic" data-required="true" type="text" class="input-field" placeholder="Отчество">
       </div>
       <button type="submit" class="send-btn">Отправить</button>
     </form>
